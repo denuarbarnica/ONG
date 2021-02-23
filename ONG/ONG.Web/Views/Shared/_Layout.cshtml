@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - L4</title>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -17,16 +17,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("ONG", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li> @Html.ActionLink("Inicio","Index","Home")</li>
-                    <li> @Html.ActionLink("Personas Desaparecidas", "Index", "Desaparecidos")</li>
-                    <li> @Html.ActionLink("Peticion de Busqueda", "Index", "Peticion")</li>
-                    <li> @Html.ActionLink("Clima", "Index", "Clima")</li>
-                    <li> @Html.ActionLink("Telemtricas", "Index", "Telemetricas")</li>
-                    <li> @Html.ActionLink("Apoyo Psicosocial", "Index", "Psicosocial")</li>
                 </ul>
             </div>
         </div>
@@ -36,7 +30,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year --UNAH-VS</p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
