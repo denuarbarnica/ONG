@@ -17,9 +17,6 @@ namespace ONG.BL
             ListadeCategorias = new List<Categorias>();
         }
 
-
-
-
         public List<Categorias> ObtenerCategorias()
         {
             ListadeCategorias = _contexto.Categorias.ToList();

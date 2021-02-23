@@ -44,9 +44,27 @@ namespace ONG.WebAdmin.Controllers
 
         public ActionResult Crear(Desaparecidos Desaparecidos)
         {
-            _DesaparecidosBL.GuardarDesaparecido(Desaparecidos);
+            if(ModelState.IsValid)
+            {
+                if(Desaparecidos.CategoriaId == 0)
+                {
+                    ModelState.AddModelError("CategoriaId", "Seleccione una Categoria");
+                    return View(Desaparecidos);
+                }
 
-            return RedirectToAction("Index");
+                _DesaparecidosBL.GuardarDesaparecido(Desaparecidos);
+
+                return RedirectToAction("Index");
+
+            }
+
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.ListaCategorias =
+                new SelectList(categorias, "Id", "Descripcion");
+
+            return View(Desaparecidos);
+
         }
 
 
@@ -63,9 +81,26 @@ namespace ONG.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Editar(Desaparecidos Desaparecidos)
         {
-            _DesaparecidosBL.GuardarDesaparecido(Desaparecidos);
+            if (ModelState.IsValid)
+            {
+                if (Desaparecidos.CategoriaId == 0)
+                {
+                    ModelState.AddModelError("CategoriaId", "Seleccione una Categoria");
+                    return View(Desaparecidos);
+                }
 
-            return RedirectToAction("Index");
+                _DesaparecidosBL.GuardarDesaparecido(Desaparecidos);
+
+                return RedirectToAction("Index");
+
+            }
+
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.ListaCategorias =
+                new SelectList(categorias, "Id", "Descripcion");
+
+            return View(Desaparecidos);
         }
 
         public  ActionResult Detalle(int id)

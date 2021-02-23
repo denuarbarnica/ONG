@@ -54,7 +54,9 @@ namespace ONG.BL
 
         public Desaparecidos ObtenerDesaparecidos( int id)
         {
-            var Desaparecido = _contexto.Desaparecido.Find(id);
+            var Desaparecido = _contexto.Desaparecido
+                .Include("Categorias").FirstOrDefault(p => p.Id == id);
+
             return Desaparecido;
         }
 
