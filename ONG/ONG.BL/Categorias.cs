@@ -11,8 +11,6 @@ namespace ONG.BL
     {
 
         public int Id { get; set; }
-        public string Evento { get; set; }
-        public string Departamento { get; set; }
-        public string Religion { get; set; }
+        public string Descripcion { get; set; }
     }
 }

@@ -4,34 +4,18 @@
     ViewBag.Title = "Detalle";
 }
 
-<h2 class="text-center">Detalle</h2>
+<h2>Detalle</h2>
 
 <div>
     <h4>Categorias</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Evento)
+            @Html.DisplayNameFor(model => model.Descripcion)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Evento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Departamento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Departamento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Religion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Religion)
+            @Html.DisplayFor(model => model.Descripcion)
         </dd>
 
     </dl>

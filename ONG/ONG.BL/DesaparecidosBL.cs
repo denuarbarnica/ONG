@@ -20,7 +20,9 @@ namespace ONG.BL
       
         public List<Desaparecidos> ObtenerDesaparecidos()
         {
-            listaDesaparecidos = _contexto.Desaparecido.ToList();
+            listaDesaparecidos = _contexto.Desaparecido
+                .Include("Categorias")
+                .ToList();
           
 
             return listaDesaparecidos;
@@ -43,6 +45,7 @@ namespace ONG.BL
                 DesaparecidoExistente.Residencia = Desaparecidos.Residencia;
                 DesaparecidoExistente.Edad = Desaparecidos.Edad;
                 DesaparecidoExistente.Genero = Desaparecidos.Genero;
+                DesaparecidoExistente.Activo = Desaparecidos.Activo;
 
             }
 

@@ -1,18 +1,18 @@
 ﻿@model IEnumerable<ONG.BL.Categorias>
 
 @{
-    ViewBag.Title = "Categorias";
+    ViewBag.Title = "Categoria";
 }
 
-<h2 class="text-center">Categorias</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Nueva Categoria", "Crear")
+    @Html.ActionLink("Crear Nueva Categoria", "Crear")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Evento)
+            @Html.DisplayNameFor(model => model.Descripcion)
         </th>
         <th></th>
     </tr>
@@ -20,7 +20,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Evento)
+            @Html.DisplayFor(modelItem => item.Descripcion)
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.Id }) |

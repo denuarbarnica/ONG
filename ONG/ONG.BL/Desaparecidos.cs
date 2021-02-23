@@ -9,7 +9,7 @@ namespace ONG.BL
     public class Desaparecidos
     {
 
-        public Desaparecidos()
+        public  Desaparecidos()
         {
             Activo = true;
         }
@@ -22,6 +22,7 @@ namespace ONG.BL
         public string Residencia { get; set; }
         public int Edad { get; set; }
         public string Genero { get; set; }
+        public int CategoriaId { get; set; }
         public Categorias Categorias { get; set; }
         public bool Activo { get; set; }
 

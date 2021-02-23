@@ -35,9 +35,9 @@ namespace ONG.WebAdmin.Controllers
 
     [HttpPost]
 
-    public ActionResult Crear(Categorias Categorias)
+    public ActionResult Crear(Categorias desaparecido)
     {
-        _CategoriasBL.GuardarCategoria(Categorias);
+        _CategoriasBL.GuardarCategoria(desaparecido);
 
         return RedirectToAction("Index");
     }
@@ -45,23 +45,23 @@ namespace ONG.WebAdmin.Controllers
 
     public ActionResult Editar(int id)
     {
-        var Categorias = _CategoriasBL.ObtenerCategorias(id);
+        var desaparecido = _CategoriasBL.ObtenerCategorias(id);
 
-        return View(Categorias);
+        return View(desaparecido);
     }
 
     [HttpPost]
-    public ActionResult Editar(Categorias Categorias)
+    public ActionResult Editar(Categorias desaparecido)
     {
-        _CategoriasBL.GuardarCategoria(Categorias);
+        _CategoriasBL.GuardarCategoria(desaparecido);
 
         return RedirectToAction("Index");
     }
         
     public ActionResult Detalle(int id)
     {
-        var Categorias = _CategoriasBL.ObtenerCategorias(id);
-        return View(Categorias);
+        var desaparecido = _CategoriasBL.ObtenerCategorias(id);
+        return View(desaparecido);
     }
 
 
@@ -69,16 +69,16 @@ namespace ONG.WebAdmin.Controllers
 
     public ActionResult Eliminar(int id)
     {
-        var Categorias = _CategoriasBL.ObtenerCategorias(id);
+        var desaparecido = _CategoriasBL.ObtenerCategorias(id);
 
-        return View(Categorias);
+        return View(desaparecido);
 
     }
         
     [HttpPost]
-    public ActionResult Eliminar(Categorias Categorias)
+    public ActionResult Eliminar(Categorias desaparecido)
     {
-        _CategoriasBL.EliminarCategoria(Categorias.Id);
+        _CategoriasBL.EliminarCategoria(desaparecido.Id);
         return RedirectToAction("Index");
     }
 
