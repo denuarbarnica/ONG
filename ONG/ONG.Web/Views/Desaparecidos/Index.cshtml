@@ -1,12 +1,33 @@
-﻿@model List<ONG.Web.Models.DesaparecidoModel>
+﻿
+@model List<ONG.BL.Desaparecido>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Desaparecidos</h2>
+<h2>Registro de Personas Desaparecidas</h2>
 
-@foreach (var desaparecido in Model)
-{
-    <p>@desaparecido.Id </p>
-}
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Primer_NOmbre
+            </th>
+            <th>
+                Segundo_Nombre
+            </th>
+        </tr>
+    </thead>
+    @foreach (var desaparecido in Model)
+    {
+        <tr>
+            <td>@desaparecido.Id</td>
+            <td>@desaparecido.Primer_Nombre</td>
+            <td>@desaparecido.Segundo_Apellido</td> 
+        </tr>
 
+    }
+
+</table>
