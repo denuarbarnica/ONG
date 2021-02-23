@@ -1,0 +1,12 @@
+﻿@model List<ONG.Web.Models.DesaparecidoModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Desaparecidos</h2>
+
+@foreach (var desaparecido in Model)
+{
+    <p>@desaparecido.Id </p>
+}
+
