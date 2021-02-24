@@ -8,29 +8,21 @@ namespace ONG.BL
 {
     public class DesaparecidosBL
     {
+        Contexto _contexto;
+        public List<Desaparecido> ListadeDesaparecidos { get; set; }
+
+        public DesaparecidosBL()
+        {
+            _contexto = new Contexto();
+            ListadeDesaparecidos = new List<Desaparecido>();
+
+        }
+
         public List<Desaparecido> ObtenerDesaparecidos()
         {
-            var desaparecido1 = new Desaparecido();
-            desaparecido1.Id = 1;
-            desaparecido1.Primer_Nombre = "Juan";
-            desaparecido1.Segundo_Apellido = "Lopez";
+            ListadeDesaparecidos = _contexto.Desaparecidos.ToList();
 
-            var desaparecido2 = new Desaparecido();
-            desaparecido2.Id = 2;
-            desaparecido2.Primer_Nombre = "Juan Lopez";
-            desaparecido2.Segundo_Apellido = "Lopez";
-
-            var desaparecido3 = new Desaparecido();
-            desaparecido3.Id = 3;
-            desaparecido3.Primer_Nombre = "Juan Lopez";
-            desaparecido3.Segundo_Apellido = "Lopez";
-
-            var listadeDesaparecidos = new List<Desaparecido>();
-            listadeDesaparecidos.Add(desaparecido1);
-            listadeDesaparecidos.Add(desaparecido2);
-            listadeDesaparecidos.Add(desaparecido3);
-
-            return listadeDesaparecidos;
+            return ListadeDesaparecidos;
         }
     }
 }

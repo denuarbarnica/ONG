@@ -16,18 +16,10 @@ namespace ONG.Win
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             var desaparecidosBL = new DesaparecidosBL();
             var listadeDesaparecidos = desaparecidosBL.ObtenerDesaparecidos();
 
-            foreach (var desaparecido in listadeDesaparecidos)
-            {
-                MessageBox.Show(desaparecido.Primer_Nombre);
-
-            }
+            listadeDesaparecidosBindingSource.DataSource = listadeDesaparecidos;
         }
     }
 }

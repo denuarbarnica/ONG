@@ -13,6 +13,7 @@ namespace ONG.BL
         public string Segundo_Nombre { get; set; }
         public string Primer_Apellido { get; set; }
         public string Segundo_Apellido { get; set; }
+        public string Residencia { get; set; }
         public int Edad { get; set; }
         public string Sexo { get; set; }
 
