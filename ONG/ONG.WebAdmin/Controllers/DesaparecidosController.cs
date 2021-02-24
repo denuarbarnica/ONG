@@ -10,10 +10,12 @@ namespace ONG.WebAdmin.Controllers
     public class DesaparecidosController : Controller
     {
         DesaparecidosBL _desaparecidosBL;
+        CategoriasBL _categoriasBL;
 
         public DesaparecidosController()
         {
             _desaparecidosBL = new DesaparecidosBL();
+            _categoriasBL = new CategoriasBL();
 
         }
 
@@ -29,6 +31,10 @@ namespace ONG.WebAdmin.Controllers
         public ActionResult Crear()
         {
             var nuevoDesaparecido = new Desaparecido();
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.ListaCategorias =
+                new SelectList(categorias, "Id", "Descripcion");
 
             return View(nuevoDesaparecido);
         }
@@ -43,6 +49,11 @@ namespace ONG.WebAdmin.Controllers
         public ActionResult Editar(int id)
         {
             var desaparecido = _desaparecidosBL.ObtenerDesaparecido(id);
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId =
+                new SelectList(categorias, "Id", "Descripcion", desaparecido.CategoriaId);
+
             return View(desaparecido);
         }
 

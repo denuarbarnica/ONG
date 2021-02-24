@@ -29,8 +29,7 @@ namespace ONG.BL
             if (categoria.Id == 0)
             {
                 _contexto.Categorias.Add(categoria);
-            }
-            else
+            }else
             {
                 var categoriaExistente = _contexto.Categorias.Find(categoria.Id);
                 categoriaExistente.Descripcion = categoria.Descripcion;

@@ -21,6 +21,7 @@ namespace ONG.BL
         public string Residencia { get; set; }
         public int Edad { get; set; }
         public string Sexo { get; set; }
+        public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
         public bool Activo { get; set; }
 
