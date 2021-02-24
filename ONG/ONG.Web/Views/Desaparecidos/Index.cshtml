@@ -6,28 +6,4 @@
 
 <h2>Registro de Personas</h2>
 
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>
-                Codigo
-            </th>
-            <th>
-                Primer_Nombre
-            </th>
-            <th>
-                Segundo_Nombre
-            </th>
-        </tr>
-    </thead>
-    @foreach (var desaparecido in Model)
-    {
-        <tr>
-            <td>@desaparecido.Id</td>
-            <td>@desaparecido.Primer_Nombre</td>
-            <td>@desaparecido.Segundo_Apellido</td> 
-        </tr>
 
-    }
-
-</table>

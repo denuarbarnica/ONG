@@ -22,5 +22,6 @@ namespace ONG.BL
         }
 
         public DbSet<Desaparecido> Desaparecidos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
     }
 }

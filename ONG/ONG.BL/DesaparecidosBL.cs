@@ -21,8 +21,43 @@ namespace ONG.BL
         public List<Desaparecido> ObtenerDesaparecidos()
         {
             ListadeDesaparecidos = _contexto.Desaparecidos.ToList();
-
             return ListadeDesaparecidos;
+        }
+
+        public void GuardarDesaparecido(Desaparecido desaparecido)
+        {
+            if(desaparecido.Id == 0)
+            {
+                _contexto.Desaparecidos.Add(desaparecido);
+            }
+            else
+            {
+                var desaparecidoExistente = _contexto.Desaparecidos.Find(desaparecido.Id);
+                desaparecidoExistente.Primer_Nombre = desaparecido.Primer_Nombre;
+                desaparecidoExistente.Segundo_Nombre = desaparecido.Segundo_Nombre;
+                desaparecidoExistente.Primer_Apellido = desaparecido.Primer_Apellido;
+                desaparecidoExistente.Segundo_Apellido = desaparecido.Segundo_Apellido;
+                desaparecidoExistente.Residencia = desaparecido.Residencia;
+                desaparecidoExistente.Edad = desaparecido.Edad;
+                desaparecidoExistente.Sexo = desaparecido.Sexo;
+            }
+
+            _contexto.SaveChanges();
+        }
+
+        public Desaparecido ObtenerDesaparecido(int id)
+        {
+            var desaparecido = _contexto.Desaparecidos.Find(id);
+
+            return desaparecido;
+        }
+
+        public void EliminarDesaparecido(int id)
+        {
+            var desaparecido = _contexto.Desaparecidos.Find(id);
+            _contexto.Desaparecidos.Remove(desaparecido);
+            _contexto.SaveChanges();
+
         }
     }
 }
