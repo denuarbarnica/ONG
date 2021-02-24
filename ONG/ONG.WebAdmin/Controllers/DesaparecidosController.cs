@@ -40,14 +40,19 @@ namespace ONG.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Crear(Desaparecido desaparecido)
+        public ActionResult Crear(Desaparecido desaparecido, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
-                if(desaparecido.CategoriaId ==0)
+                if (desaparecido.CategoriaId == 0)
                 {
                     ModelState.AddModelError("CategoriaId", "Seleccione una Categoria");
                     return View(desaparecido);
+                }
+
+                if(imagen != null)
+                {
+                    desaparecido.UrlImagen = GuardarImagen(imagen);
                 }
 
                 _desaparecidosBL.GuardarDesaparecido(desaparecido);
@@ -75,7 +80,7 @@ namespace ONG.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Desaparecido desaparecido)
+        public ActionResult Editar(Desaparecido desaparecido, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
@@ -83,6 +88,10 @@ namespace ONG.WebAdmin.Controllers
                 {
                     ModelState.AddModelError("CategoriaId", "Seleccione una Categoria");
                     return View(desaparecido);
+                }
+                if (imagen != null)
+                {
+                    desaparecido.UrlImagen = GuardarImagen(imagen);
                 }
 
                 _desaparecidosBL.GuardarDesaparecido(desaparecido);
@@ -117,6 +126,14 @@ namespace ONG.WebAdmin.Controllers
             _desaparecidosBL.EliminarDesaparecido(desaparecido.Id);
 
             return RedirectToAction("Index");
+        }
+
+        private string GuardarImagen(HttpPostedFileBase imagen)
+        {
+            string path = Server.MapPath("~/Imagenes/" + imagen.FileName);
+                imagen.SaveAs(path);
+
+            return "/Imagenes/" + imagen.FileName;
         }
     }
 }
