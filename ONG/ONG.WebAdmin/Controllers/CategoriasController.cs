@@ -32,11 +32,23 @@ namespace ONG.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Crear(Categoria desaparecido)
+        public ActionResult Crear(Categoria categoria)
         {
-            _categoriasBL.GuardarCategoria(desaparecido);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("Descripcion", "El campo no debe contener espacios al inicio o al final");
+                    return View(categoria);
+                }
+
+                _categoriasBL.GuardarCategoria(categoria);
+                return RedirectToAction("Index");
+            }
+
+            return View(categoria);
         }
+
 
         public ActionResult Editar(int id)
         {
@@ -45,10 +57,21 @@ namespace ONG.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Categoria desaparecido)
+        public ActionResult Editar(Categoria categoria)
         {
-            _categoriasBL.GuardarCategoria(desaparecido);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                if (categoria.Descripcion != categoria.Descripcion.Trim())
+                {
+                    ModelState.AddModelError("Descripcion", "El campo no debe contener espacios al inicio o al final");
+                    return View(categoria);
+                }
+
+                _categoriasBL.GuardarCategoria(categoria);
+                return RedirectToAction("Index");
+            }
+
+            return View(categoria);
         }
 
         public ActionResult Detalle(int id)

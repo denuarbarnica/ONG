@@ -43,6 +43,8 @@ namespace ONG.BL
                 desaparecidoExistente.Residencia = desaparecido.Residencia;
                 desaparecidoExistente.Edad = desaparecido.Edad;
                 desaparecidoExistente.Sexo = desaparecido.Sexo;
+                desaparecidoExistente.CategoriaId = desaparecido.CategoriaId;
+
             }
 
             _contexto.SaveChanges();

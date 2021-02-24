@@ -33,7 +33,7 @@ namespace ONG.WebAdmin.Controllers
             var nuevoDesaparecido = new Desaparecido();
             var categorias = _categoriasBL.ObtenerCategorias();
 
-            ViewBag.ListaCategorias =
+            ViewBag.CategoriaId =
                 new SelectList(categorias, "Id", "Descripcion");
 
             return View(nuevoDesaparecido);
@@ -42,8 +42,25 @@ namespace ONG.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Crear(Desaparecido desaparecido)
         {
-            _desaparecidosBL.GuardarDesaparecido(desaparecido);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                if(desaparecido.CategoriaId ==0)
+                {
+                    ModelState.AddModelError("CategoriaId", "Seleccione una Categoria");
+                    return View(desaparecido);
+                }
+
+                _desaparecidosBL.GuardarDesaparecido(desaparecido);
+                return RedirectToAction("Index");
+            }
+
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId =
+                new SelectList(categorias, "Id", "Descripcion");
+
+            return View(desaparecido);
+
         }
 
         public ActionResult Editar(int id)
@@ -60,8 +77,24 @@ namespace ONG.WebAdmin.Controllers
         [HttpPost]
         public ActionResult Editar(Desaparecido desaparecido)
         {
-            _desaparecidosBL.GuardarDesaparecido(desaparecido);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                if (desaparecido.CategoriaId == 0)
+                {
+                    ModelState.AddModelError("CategoriaId", "Seleccione una Categoria");
+                    return View(desaparecido);
+                }
+
+                _desaparecidosBL.GuardarDesaparecido(desaparecido);
+                return RedirectToAction("Index");
+            }
+
+            var categorias = _categoriasBL.ObtenerCategorias();
+
+            ViewBag.CategoriaId =
+                new SelectList(categorias, "Id", "Descripcion");
+
+            return View(desaparecido);
         }
 
         public ActionResult Detalle(int id)
