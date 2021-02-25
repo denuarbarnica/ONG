@@ -4,14 +4,13 @@
     ViewBag.Title = "Crear";
 }
 
-<h2>Crear </h2>
+<h2 class="text-center">Crear Registro </h2>
 
 @using (Html.BeginForm("Crear", "Desaparecidos", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Desaparecido</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
