@@ -81,7 +81,7 @@
 
         <div class="form-group">
             <label class="control-label col-md-2">Seleccionar Imagen</label>
-            <div class="col-md-10">
+            <div class="col-md-2">
                 <input type="file" name="imagen" id="imagen" />
             </div>
             <div class="col-md-8">
@@ -94,7 +94,7 @@
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.Activo)
-                    @Html.ValidationMessageFor(model => model.Activo)
+                    @Html.ValidationMessageFor(model => model.Activo, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

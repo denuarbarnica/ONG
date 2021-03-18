@@ -89,12 +89,14 @@ namespace ONG.WebAdmin.Controllers
                     ModelState.AddModelError("CategoriaId", "Seleccione una Categoria");
                     return View(desaparecido);
                 }
+
                 if (imagen != null)
                 {
                     desaparecido.UrlImagen = GuardarImagen(imagen);
                 }
 
                 _desaparecidosBL.GuardarDesaparecido(desaparecido);
+
                 return RedirectToAction("Index");
             }
 

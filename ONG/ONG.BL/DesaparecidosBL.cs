@@ -45,6 +45,7 @@ namespace ONG.BL
                 desaparecidoExistente.Sexo = desaparecido.Sexo;
                 desaparecidoExistente.CategoriaId = desaparecido.CategoriaId;
                 desaparecidoExistente.UrlImagen = desaparecido.UrlImagen;
+                desaparecidoExistente.Activo = desaparecido.Activo;
 
             }
 
