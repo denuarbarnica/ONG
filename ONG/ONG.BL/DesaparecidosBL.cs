@@ -22,6 +22,17 @@ namespace ONG.BL
         {
             ListadeDesaparecidos = _contexto.Desaparecidos
                 .Include("Categoria")
+                .OrderBy(r => r.Primer_Nombre)
+                .ToList();
+
+            return ListadeDesaparecidos;
+        }
+        public List<Desaparecido> ObtenerDesaparecidosActivos()
+        {
+            ListadeDesaparecidos = _contexto.Desaparecidos
+                .Include("Categoria")
+                .Where(r => r.Activo == true )
+                .OrderBy(r => r.Primer_Nombre)
                 .ToList();
 
             return ListadeDesaparecidos;

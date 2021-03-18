@@ -52,12 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Beneficiario.cs" />
+    <Compile Include="BeneficiariosBL.cs" />
+    <Compile Include="Beneficio.cs" />
+    <Compile Include="BeneficiosBL.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriasBL.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="Desaparecido.cs" />
     <Compile Include="DesaparecidosBL.cs" />
+    <Compile Include="Orden.cs" />
+    <Compile Include="OrdenesBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportePorBeneficio.cs" />
+    <Compile Include="ReportePorBeneficioBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
