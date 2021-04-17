@@ -227,6 +227,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DesaparecidosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TelemetriController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -244,6 +245,8 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Desaparecidos\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutDesaparecido.cshtml" />
+    <Content Include="Views\Telemetri\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutTelemetricas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -272,7 +275,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64567</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
