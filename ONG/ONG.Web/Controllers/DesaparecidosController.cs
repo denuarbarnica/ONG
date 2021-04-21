@@ -27,6 +27,7 @@ namespace ONG.Web.Controllers
             var listadeDesaparecidos = _desaparecidosBL.ObtenerDesaparecidosActivos();
 
             ViewBag.adminWebsiteUrl = ConfigurationManager.AppSettings["adminWebsiteUrl"];
+            ViewBag.WebsiteUrl = ConfigurationManager.AppSettings["WebsiteUrl"];
 
             return View(listadeDesaparecidos);
     
@@ -74,10 +75,10 @@ namespace ONG.Web.Controllers
 
         private string GuardarImagen(HttpPostedFileBase imagen)
         {
-            string path = Server.MapPath("~/Imagenes/" + imagen.FileName);
+            string path = Server.MapPath("~/images/" + imagen.FileName);
             imagen.SaveAs(path);
 
-            return "/Imagenes/" + imagen.FileName;
+            return "/images/" + imagen.FileName;
         }
 
     }
