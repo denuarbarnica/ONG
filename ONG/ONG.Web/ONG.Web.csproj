@@ -243,11 +243,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Desaparecidos\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutDesaparecido.cshtml" />
     <Content Include="Views\Telemetri\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutTelemetricas.cshtml" />
-    <Content Include="Views\Desaparecidos\Crear.cshtml" />
+    <Content Include="Views\Desaparecidos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
