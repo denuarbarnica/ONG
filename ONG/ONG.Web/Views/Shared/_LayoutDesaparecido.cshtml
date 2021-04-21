@@ -66,7 +66,7 @@
     <section id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12 text-center">
+                <div class="col-md-12 col-sm-2 text-center">
                     <div class="section-title">
                         <strong></strong>
                         <h1 class="heading bold">REGISTRO DE PERSONAS DESAPARECIDAS</h1>
@@ -74,18 +74,20 @@
                     </div>
                 </div>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="Formulario" class="smoothScroll">CREAR REGISTRO</a></li>
-            </ul>
         </div>
     </section>
 
     <!-- pricing section -->
     <section id="pricing">
         <div class="container">
-            <div class="col-md-12 col-sm-12 text-center">
+            <div class="col-md-10 col-sm-8 text-right">
+                @Html.ActionLink("Crear Nuevo Registro", "Crear")
+                <br />
+                <br />
+                <br />
             </div>
             <div class="row">
+
                 @foreach (var desaparecido in Model)
                 {
                     <div class="col-md-4 col-sm-6">
@@ -106,6 +108,7 @@
             </div>
         </div>
     </section>
+
     <footer>
         <p>&copy; @DateTime.Now.Year - ONG</p>
     </footer>
