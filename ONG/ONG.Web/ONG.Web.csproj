@@ -247,6 +247,8 @@
     <Content Include="Views\Telemetri\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutTelemetricas.cshtml" />
     <Content Include="Views\Desaparecidos\Index.cshtml" />
+    <Content Include="Views\Desaparecidos\Crear.cshtml" />
+    <Content Include="Views\Shared\_LayoutFormulario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
