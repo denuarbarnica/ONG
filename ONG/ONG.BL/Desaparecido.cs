@@ -48,7 +48,6 @@ namespace ONG.BL
         public int Edad { get; set; }
 
         [Required(ErrorMessage = "Este campo es Obligatorio")]
-        [MinLength(3, ErrorMessage = "Ingrese Minimo tres Caracteres")]
         [MaxLength(200, ErrorMessage = "Ingrese Maximo 20 caracteres")]
         public string Sexo { get; set; }
         public int CategoriaId { get; set; }
