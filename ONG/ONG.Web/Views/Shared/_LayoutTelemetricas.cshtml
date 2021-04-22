@@ -107,17 +107,49 @@
         </div>
     </section>
 
-    <div class="text-center">
-        <div>
-            <h1 class="heading bold">Personas Desaparecidas por Rango de Edad</h1>
-            <hr>
-            <img src="images/poredadd.jpg" alt="ONG" width="900" height="290">
-            <br />
-            <h1 class="heading bold">Personas Desaparecidas por Genero</h1>
-            <hr>
-            <img src="images/porgeneroo.jpg" alt="ONG" width="900" height="290">
+    <section>
+        <div class="text-center">
+            <div class="section-title">
+                <div>
+                    <form>
+                        <header>
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                            <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+          var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['15 - 29 Años',  15],
+            ['30 -  44 Años', 18],
+            ['45 - 59 Años',  25],
+            ['60 - 74 Años',  27],
+            ['75 - 89 Años',  10],
+            ['90 - 105 Años',  5],
+
+          ]);
+
+        var options = {
+          title: 'Personas Desaparecidad Por Rango de Edad'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+                            </script>
+                        </header>
+
+                        <body>
+                            <div id="piechart" style="width: 1200px; height: 400px;"></div>
+                        </body>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <footer>
         <p>&copy; @DateTime.Now.Year - ONG</p>
