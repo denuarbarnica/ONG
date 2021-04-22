@@ -8,11 +8,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <!--
-
     Template 2075 Digital Team
-
     http://www.tooplate.com/view/2075-digital-team
-
     -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -91,6 +88,7 @@
     </section>
     <br />
     <br />
+    <div></div>
 
     <!----------------->
     <section id="about">
@@ -117,9 +115,7 @@
                             <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
       function drawChart() {
-
           var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
             ['15 - 29 Años',  15],
@@ -128,15 +124,11 @@
             ['60 - 74 Años',  27],
             ['75 - 89 Años',  10],
             ['90 - 105 Años',  5],
-
           ]);
-
         var options = {
-          title: 'Personas Desaparecidad Por Rango de Edad'
+          title: 'Personas Desaparecidas Por Rango de Edad'
         };
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
         chart.draw(data, options);
       }
                             </script>
@@ -147,6 +139,39 @@
                         </body>
                     </form>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="text-center">
+            <div class="section-title">
+               <div>
+                   <header>
+                       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                       <script type="text/javascript">
+                                    google.charts.load("current", { packages: ["corechart"] });
+                                    google.charts.setOnLoadCallback(drawChart);
+                                    function drawChart() {
+                                        var data = google.visualization.arrayToDataTable([
+                                          ['Task', 'Hours per Day'],
+                                          ['Femenino', 48],
+                                          ['Masculino', 52],
+                                        ]);
+                                        var options = {
+                                            title: 'Personas Desaparecidas Por Genero',
+                                            pieHole: 0.4,
+                                        };
+
+                                        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                                        chart.draw(data, options);
+                                    }
+                       </script>
+                   </header>
+                   <body>
+                       <div id="donutchart" style="width: 1200px; height: 400px;"></div>
+                   </body>
+               </div>
             </div>
         </div>
     </section>
@@ -166,4 +191,3 @@
     <script src="js/custom.js"></script>
 </body>
 </html>
-
