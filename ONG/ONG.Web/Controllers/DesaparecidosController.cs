@@ -26,9 +26,7 @@ namespace ONG.Web.Controllers
             var _desaparecidosBL = new DesaparecidosBL();
             var listadeDesaparecidos = _desaparecidosBL.ObtenerDesaparecidosActivos();
 
-            ViewBag.adminWebsiteUrl = ConfigurationManager.AppSettings["adminWebsiteUrl"];
-            ViewBag.WebsiteUrl1 = ConfigurationManager.AppSettings["WebsiteUrl"];
-
+            ViewBag.adminWebsiteUrl = ConfigurationManager.AppSettings["adminWebsiteUrl" + "WebsiteUrl"];
             return View(listadeDesaparecidos);
     
         }
