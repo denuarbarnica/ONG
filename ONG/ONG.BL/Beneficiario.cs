@@ -18,6 +18,7 @@ namespace ONG.BL
 
         [Required(ErrorMessage = "Ingrese el Telefono")]
         [MinLength(8, ErrorMessage = "El telefono debe ser de 8 digitos")]
+        [MaxLength(20, ErrorMessage = "El telefono debe ser de 8 digitos")]
         public string Telefono { get; set; }
 
         [Required(ErrorMessage = "Ingrese la Direccion")]
